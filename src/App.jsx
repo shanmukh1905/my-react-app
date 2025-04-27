@@ -1,35 +1,50 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Experience from './pages/experience'
+import Home from './pages/Home'
+import Projects from './pages/projects'
+import Blogs from './pages/Blogs'
+import Contact from './pages/Contact'
+import Navbar from './components/navbar'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>my-react-app</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <header>
+        <Navbar />
+      </header>
+      
+      <main>
+        <section id="home" style={{ padding: '20px 0' }}>
+          <Home />
+        </section>
+        
+        <section id="experience" style={{ padding: '20px 0' }}>
+          <h2>Experience</h2>
+          <Experience />
+        </section>
+        
+        <section id="projects" style={{ padding: '20px 0' }}>
+          <h2>Projects</h2>
+          <Projects />
+        </section>
+        
+        <section id="blogs" style={{ padding: '20px 0' }}>
+          <h2>Blogs</h2>
+          <Blogs />
+        </section>
+        
+        <section id="contact" style={{ padding: '20px 0' }}>
+          <h2>Contact</h2>
+          <Contact />
+        </section>
+      </main>
+      
+      <footer style={{ textAlign: 'center', padding: '20px', marginTop: '40px' }}>
+        <p>© 2025 Portfolio Website</p>
+      </footer>
+    </div>
+  );
 }
 
 export default App
