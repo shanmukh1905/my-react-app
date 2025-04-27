@@ -24,6 +24,9 @@ const Navbar = () => {
       }
     };
 
+    // Call handleResize right away to set initial size
+    handleResize();
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -37,22 +40,26 @@ const Navbar = () => {
       // Find which section is currently in view
       const sections = navLinks.map(link => 
         document.getElementById(link.id)
-      );
+      ).filter(Boolean); // Filter out any null sections
       
-      const currentSection = sections.find(section => {
-        if (!section) return false;
-        const rect = section.getBoundingClientRect();
-        return rect.top <= 150 && rect.bottom >= 150;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection.id);
+      if (sections.length) {
+        const currentSection = sections.find(section => {
+          const rect = section.getBoundingClientRect();
+          return rect.top <= 150 && rect.bottom >= 150;
+        });
+        
+        if (currentSection) {
+          setActiveSection(currentSection.id);
+        }
       }
     };
 
+    // Call handleScroll initially
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navLinks]);
 
   // Smooth scroll to section
   const scrollToSection = (id) => {
@@ -64,10 +71,11 @@ const Navbar = () => {
     setMenuOpen(false); // Close mobile menu after clicking
   };
 
-  // Navbar styles
+  // Navbar styles - fixed position instead of sticky
   const navStyles = {
-    position: 'sticky',
+    position: 'fixed', // Changed from 'sticky' to 'fixed'
     top: 0,
+    left: 0, // Ensure it spans from the left edge
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -125,31 +133,36 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={navStyles}>
-      <h1 style={logoStyles} onClick={() => scrollToSection('home')}>
-        Portfolio
-      </h1>
+    <>
+      <nav style={navStyles}>
+        <h1 style={logoStyles} onClick={() => scrollToSection('home')}>
+          Portfolio
+        </h1>
+        
+        <button 
+          style={hamburgerStyles} 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
+        
+        <div style={navLinksContainerStyles}>
+          {navLinks.map(link => (
+            <a
+              key={link.id}
+              style={navLinkStyle(activeSection === link.id)}
+              onClick={() => scrollToSection(link.id)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </nav>
       
-      <button 
-        style={hamburgerStyles} 
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle navigation menu"
-      >
-        {menuOpen ? '✕' : '☰'}
-      </button>
-      
-      <div style={navLinksContainerStyles}>
-        {navLinks.map(link => (
-          <a
-            key={link.id}
-            style={navLinkStyle(activeSection === link.id)}
-            onClick={() => scrollToSection(link.id)}
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-    </nav>
+      {/* Add spacing element to prevent content from hiding under the navbar */}
+      <div style={{ height: '70px' }}></div>
+    </>
   );
 };
 
