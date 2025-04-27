@@ -1,0 +1,16 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20" # React 19 works best with Node 20+
+  NPM_FLAGS = "--legacy-peer-deps" # May help with newer React versions
+
+[dev]
+  framework = "vite"
+  targetPort = 5173 # Default Vite port
