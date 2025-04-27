@@ -1,37 +1,36 @@
 import React from 'react';
+import styles from './Card.module.css';
 
-const Card = ({ title, subtitle, content, footer, image }) => {
+// theme can be 'blue', 'red', 'yellow', 'green' or undefined (default)
+// layout can be 'horizontal' or undefined (default)
+const Card = ({ title, subtitle, content, footer, image, theme, layout }) => {
+  // Determine class names based on theme and layout
+  const cardClasses = [
+    styles.card,
+    theme === 'blue' && styles.blueCard,
+    theme === 'red' && styles.redCard,
+    theme === 'yellow' && styles.yellowCard,
+    theme === 'green' && styles.greenCard,
+    layout === 'horizontal' && styles.horizontalCard
+  ].filter(Boolean).join(' ');
+
   return (
-    <div style={{ 
-      border: '1px solid #ddd', 
-      borderRadius: '8px',
-      margin: '16px',
-      overflow: 'hidden',
-      display: 'flex',
-      flexDirection: 'column'
-    }}>
+    <div className={cardClasses}>
       {image && (
-        <div>
+        <div className={styles.imageContainer}>
           <img 
             src={image} 
-            alt={title} 
-            style={{ width: '100%', height: 'auto' }} 
+            alt={title || 'Card image'} 
+            className={styles.image} 
           />
         </div>
       )}
-      <div style={{ padding: '16px' }}>
-        {title && <h3 style={{ marginTop: '0' }}>{title}</h3>}
-        {subtitle && <h4 style={{ color: '#666' }}>{subtitle}</h4>}
+      <div className={styles.content}>
+        {title && <h3 className={styles.title}>{title}</h3>}
+        {subtitle && <h4 className={styles.subtitle}>{subtitle}</h4>}
         {content && <div>{content}</div>}
         {footer && (
-          <div style={{ 
-            marginTop: '16px', 
-            paddingTop: '16px', 
-            borderTop: '1px solid #eee',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center'
-          }}>
+          <div className={styles.footer}>
             {footer}
           </div>
         )}

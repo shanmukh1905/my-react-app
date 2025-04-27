@@ -1,0 +1,130 @@
+{
+  "personalInfo": {
+    "name": "NAMAKANTI SHANMUKHA SAI",
+    "email": "shanmukhasai996@gmail.com",
+    "phone": "+91 9603397287",
+    "linkedin": "www.linkedin.com/in/shanmukh16"
+  },
+  "education": [
+    {
+      "degree": "B.Tech, Computer Science and Business Systems",
+      "institution": "Sastra Deemed University, Thanjavur",
+      "duration": "2022-2026",
+      "score": "CGPA: 7.02"
+    },
+    {
+      "degree": "Intermediate (MPC)",
+      "institution": "Sri Chaitanya, Visakhapatnam",
+      "duration": "2019-2021",
+      "score": "97.9%"
+    },
+    {
+      "degree": "10th",
+      "institution": "Narayana Group of Schools, Anakapalle",
+      "year": "2019",
+      "score": "98%"
+    }
+  ],
+  "relevantCoursework": [
+    "Robotics",
+    "Machine Learning",
+    "Computer Vision",
+    "Embedded Systems",
+    "Mobile App Development"
+  ],
+  "experience": [
+    {
+      "position": "Robotics Club Member",
+      "organization": "Sastra University",
+      "duration": "Nov 2022-Present",
+      "responsibilities": [
+        "Led robotics programming workshops, designed and presented a self-balancing bot project to audience",
+        "Participated in ISRO (IROC-U2024) competition"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "MHI Certification Course",
+      "duration": "Jan 2023 - May 2024",
+      "details": "Gained foundational knowledge in ROS, Autonomous mobile navigation, SCARA bots"
+    }
+  ],
+  "skills": {
+    "technical": [
+      "Python",
+      "C/C++",
+      "Arduino",
+      "Git",
+      "SQL",
+      "Linux OS",
+      "Embedded Systems",
+      "ROS",
+      "Java"
+    ],
+    "additional": [
+      "Machine Learning Models",
+      "Deep Learning Frameworks"
+    ],
+    "languages": [
+      {"name": "English", "level": "fluent"},
+      {"name": "Hindi", "level": "conversational"},
+      {"name": "Telugu", "level": "conversational"},
+      {"name": "Tamil", "level": "conversational"},
+      {"name": "Spanish", "level": "basic"}
+    ],
+    "laboratory": [
+      "Robotics",
+      "AI and ML",
+      "SQL Databases",
+      "Computer Networks",
+      "Operating Systems"
+    ]
+  },
+  "projects": [
+    {
+      "title": "Kidney Stone Detection using Transfer Learning",
+      "description": "Developed a Deep Learning model to classify kidney stones from CT scan images, aiming to improve diagnostic accuracy",
+      "details": [
+        "Applied Transfer Learning techniques, fine-tuning pre-trained Convolutional Neural Network (CNN) models (ResNet50) on a kidney stone image dataset",
+        "Implemented image preprocessing and data augmentation to enhance model performance and generalization"
+      ],
+      "technologies": ["Deep Learning", "CNN", "ResNet50", "Transfer Learning"]
+    },
+    {
+      "title": "Habit Tracker Application",
+      "description": "Developed a full-stack application using React.js, MongoDB, and Python to help users monitor and manage daily habits effectively",
+      "details": [
+        "Designed an interactive and user-friendly React.js frontend for adding, editing, deleting, and tracking habits",
+        "Implemented server-side logic and RESTful APIs in Python for secure data handling and communication",
+        "Utilized MongoDB for efficient NoSQL database storage and retrieval of user data, habit details, and progress",
+        "Included features like real-time updates, progress visualization, and user authentication"
+      ],
+      "technologies": ["React.js", "MongoDB", "Python", "Flask/Django", "RESTful APIs"]
+    },
+    {
+      "title": "Self-Balancing Bot",
+      "description": "Designed, built, and programmed a two-wheeled self-balancing robot using Arduino and IMU sensors",
+      "details": [
+        "Demonstrated proficiency in embedded systems, sensor fusion, and real-time control",
+        "Implemented a PID control algorithm in C++ to maintain balance, achieving stable operation"
+      ],
+      "technologies": ["Arduino", "IMU Sensors", "C++", "PID Control"]
+    },
+    {
+      "title": "Gesture-Controlled Robot",
+      "description": "Developed a robot using Arduino, ultrasonic sensors, and motor drivers",
+      "details": [
+        "Executed real-time gesture recognition with Python and OpenCV, demonstrating skills in robotics and computer vision"
+      ],
+      "technologies": ["Arduino", "Python", "OpenCV", "Ultrasonic Sensors", "Motor Drivers"]
+    }
+  ],
+  "interests": [
+    "Robotics and machine learning applications, with a focus on wireless and embedded systems",
+    "Cricket, adventurous activities (parasailing, ski boating, trekking)",
+    "Active participant in debates and presentations, enhancing communication skills",
+    "Collaborated on short film and article about child labor awareness, demonstrating social responsibility",
+    "NCC Cadet, participated in pre-national camps, and developed leadership skills"
+  ]
+}

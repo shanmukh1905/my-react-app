@@ -1,0 +1,100 @@
+.button {
+  font-family: var(--font-family);
+  font-weight: 500;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  text-align: center;
+  letter-spacing: 0.25px;
+}
+
+.button svg {
+  margin-right: 8px;
+}
+
+/* Button variants - based on Google colors */
+
+.primary {
+  background-color: var(--google-medium-blue);
+  color: white;
+}
+
+.primary:hover {
+  background-color: var(--google-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.secondary {
+  background-color: white;
+  color: var(--google-medium-blue);
+  border: 1px solid var(--google-light-grey);
+}
+
+.secondary:hover {
+  background-color: var(--google-light-grey);
+  box-shadow: var(--shadow-sm);
+}
+
+.success {
+  background-color: var(--google-medium-green);
+  color: white;
+}
+
+.success:hover {
+  background-color: var(--google-green);
+  box-shadow: var(--shadow-md);
+}
+
+.danger {
+  background-color: var(--google-medium-red);
+  color: white;
+}
+
+.danger:hover {
+  background-color: var(--google-red);
+  box-shadow: var(--shadow-md);
+}
+
+.warning {
+  background-color: var(--google-yellow);
+  color: var(--google-black);
+}
+
+.warning:hover {
+  background-color: var(--google-orange);
+  box-shadow: var(--shadow-md);
+}
+
+/* Button sizes */
+.small {
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.large {
+  padding: 12px 32px;
+  font-size: 16px;
+}
+
+/* Rounded variant */
+.rounded {
+  border-radius: 50px;
+}
+
+/* Disabled state */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  box-shadow: none;
+  transform: none;
+}

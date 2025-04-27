@@ -1,0 +1,80 @@
+:root {
+  /* Google Color Palette - Base Colors */
+  --google-blue: #174EA6;
+  --google-red: #A50E0E;
+  --google-orange: #E37400;
+  --google-green: #0D652D;
+  --google-medium-blue: #4285F4;
+  --google-medium-red: #EA4335;
+  --google-yellow: #FBBC04;
+  --google-medium-green: #34A853;
+  --google-light-blue: #D2E3FC;
+  --google-light-red: #FAD2CF;
+  --google-light-yellow: #FEEFC3;
+  --google-light-green: #CEEAD6;
+  --google-light-grey: #F1F3F4;
+  --google-grey: #9AA0A6;
+  --google-black: #202124;
+  --white: #FFFFFF;
+
+  /* Semantic Color Mapping */
+  --primary: var(--google-medium-blue);
+  --primary-dark: var(--google-blue);
+  --primary-light: var(--google-light-blue);
+  
+  --secondary: var(--google-grey);
+  --secondary-dark: var(--google-black);
+  --secondary-light: var(--google-light-grey);
+  
+  --accent: var(--google-yellow);
+  --accent-light: var(--google-light-yellow);
+  
+  --success: var(--google-medium-green);
+  --success-dark: var(--google-green);
+  --success-light: var(--google-light-green);
+  
+  --danger: var(--google-medium-red);
+  --danger-dark: var(--google-red);
+  --danger-light: var(--google-light-red);
+  
+  --warning: var(--google-orange);
+  --warning-light: var(--google-light-yellow);
+  
+  --background: var(--white);
+  --text: var(--google-black);
+  --text-light: var(--google-grey);
+  
+  /* Typography */
+  --font-family: 'Google Sans', 'Product Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Border radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-pill: 50rem;
+  
+  /* Box shadow */
+  --shadow-sm: 0 1px 2px rgba(32, 33, 36, 0.1);
+  --shadow-md: 0 2px 6px rgba(32, 33, 36, 0.15);
+  --shadow-lg: 0 4px 12px rgba(32, 33, 36, 0.2);
+  
+  /* Transition */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+}

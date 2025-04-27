@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from './navbar.module.css';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -71,87 +72,26 @@ const Navbar = () => {
     setMenuOpen(false); // Close mobile menu after clicking
   };
 
-  // Navbar styles - fixed position instead of sticky
-  const navStyles = {
-    position: 'fixed', // Changed from 'sticky' to 'fixed'
-    top: 0,
-    left: 0, // Ensure it spans from the left edge
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '15px 20px',
-    backgroundColor: 'white',
-    boxShadow: scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
-    transition: 'box-shadow 0.3s ease',
-    zIndex: 1000,
-    width: '100%',
-    boxSizing: 'border-box'
-  };
-
-  // Logo styles
-  const logoStyles = {
-    fontWeight: 'bold',
-    fontSize: '1.5rem',
-    margin: 0,
-    cursor: 'pointer'
-  };
-
-  // Navigation links container
-  const navLinksContainerStyles = {
-    display: windowWidth > 768 || menuOpen ? 'flex' : 'none',
-    flexDirection: windowWidth <= 768 ? 'column' : 'row',
-    position: windowWidth <= 768 ? 'absolute' : 'static',
-    top: windowWidth <= 768 ? '60px' : 'auto',
-    left: 0,
-    right: 0,
-    backgroundColor: 'white',
-    padding: windowWidth <= 768 ? '20px' : 0,
-    boxShadow: windowWidth <= 768 && menuOpen ? '0 5px 10px rgba(0,0,0,0.1)' : 'none',
-    alignItems: windowWidth <= 768 ? 'flex-start' : 'center'
-  };
-
-  // Individual nav link style
-  const navLinkStyle = (isActive) => ({
-    margin: windowWidth <= 768 ? '10px 0' : '0 15px',
-    padding: '5px 0',
-    color: isActive ? '#007bff' : '#333',
-    fontWeight: isActive ? 'bold' : 'normal',
-    textDecoration: 'none',
-    borderBottom: isActive ? '2px solid #007bff' : '2px solid transparent',
-    transition: 'all 0.2s ease',
-    cursor: 'pointer'
-  });
-
-  // Hamburger menu style
-  const hamburgerStyles = {
-    display: windowWidth <= 768 ? 'block' : 'none',
-    background: 'none',
-    border: 'none',
-    fontSize: '1.5rem',
-    cursor: 'pointer',
-    padding: '5px'
-  };
-
   return (
     <>
-      <nav style={navStyles}>
-        <h1 style={logoStyles} onClick={() => scrollToSection('home')}>
+      <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+        <h1 className={styles.logo} onClick={() => scrollToSection('home')}>
           Portfolio
         </h1>
         
         <button 
-          style={hamburgerStyles} 
+          className={styles.hamburger}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
         >
           {menuOpen ? '✕' : '☰'}
         </button>
         
-        <div style={navLinksContainerStyles}>
+        <div className={menuOpen ? styles.navLinksActive : styles.navLinks}>
           {navLinks.map(link => (
             <a
               key={link.id}
-              style={navLinkStyle(activeSection === link.id)}
+              className={`${styles.navLink} ${activeSection === link.id ? styles.navLinkActive : ''}`}
               onClick={() => scrollToSection(link.id)}
             >
               {link.label}
@@ -161,7 +101,7 @@ const Navbar = () => {
       </nav>
       
       {/* Add spacing element to prevent content from hiding under the navbar */}
-      <div style={{ height: '70px' }}></div>
+      <div className={styles.spacer}></div>
     </>
   );
 };

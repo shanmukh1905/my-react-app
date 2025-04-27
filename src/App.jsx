@@ -6,18 +6,24 @@ import Projects from './pages/projects'
 import Blogs from './pages/Blogs'
 import Contact from './pages/Contact'
 import Navbar from './components/navbar'
+import { getData } from './utils/dataLoader'
+import styles from './styles/App.module.css'
 import './App.css'
 
 function App() {
   const location = useLocation();
+  const data = getData();
   
   // This helps with scroll restoration between routes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Add a Google-inspired theme color cycle for sections
+  const sectionThemes = ['blue', 'red', 'yellow', 'green'];
+
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <div className={styles.container}>
       <header>
         <Navbar />
       </header>
@@ -26,27 +32,27 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <section id="home" style={{ padding: '20px 0' }}>
+              <section id="home" className={styles.section}>
                 <Home />
               </section>
               
-              <section id="experience" style={{ padding: '20px 0' }}>
-                <h2>Experience</h2>
+              <section id="experience" className={`${styles.section} ${styles.blueSection}`}>
+                <h2 className={styles.sectionHeading}>Experience</h2>
                 <Experience />
               </section>
               
-              <section id="projects" style={{ padding: '20px 0' }}>
-                <h2>Projects</h2>
+              <section id="projects" className={`${styles.section} ${styles.redSection}`}>
+                <h2 className={styles.sectionHeading}>Projects</h2>
                 <Projects />
               </section>
               
-              <section id="blogs" style={{ padding: '20px 0' }}>
-                <h2>Blogs</h2>
+              <section id="blogs" className={`${styles.section} ${styles.yellowSection}`}>
+                <h2 className={styles.sectionHeading}>Blogs</h2>
                 <Blogs />
               </section>
               
-              <section id="contact" style={{ padding: '20px 0' }}>
-                <h2>Contact</h2>
+              <section id="contact" className={`${styles.section} ${styles.greenSection}`}>
+                <h2 className={styles.sectionHeading}>Contact</h2>
                 <Contact />
               </section>
             </>
@@ -59,8 +65,16 @@ function App() {
         </Routes>
       </main>
       
-      <footer style={{ textAlign: 'center', padding: '20px', marginTop: '40px' }}>
-        <p>© 2025 Portfolio Website</p>
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <p>© 2025 {data.personalInfo.name}'s Portfolio Website</p>
+          <div className={styles.googleColorBar}>
+            <div className={styles.blueBar}></div>
+            <div className={styles.redBar}></div>
+            <div className={styles.yellowBar}></div>
+            <div className={styles.greenBar}></div>
+          </div>
+        </div>
       </footer>
     </div>
   );

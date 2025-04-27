@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import Card from '../components/Card';
+import { getData } from '../utils/dataLoader';
 
 const Contact = () => {
+  const data = getData();
+  const { personalInfo } = data;
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -42,13 +46,15 @@ const Contact = () => {
       <p>Feel free to reach out with any questions or opportunities.</p>
       <div>
         <div style={{ margin: '10px 0' }}>
-          <span>✉️ email@example.com</span>
+          <span>✉️ {personalInfo.email}</span>
         </div>
         <div style={{ margin: '10px 0' }}>
-          <span>📱 +1 123-456-7890</span>
+          <span>📱 {personalInfo.phone}</span>
         </div>
         <div style={{ margin: '10px 0' }}>
-          <span>📍 New York, NY</span>
+          <span>🔗 <a href={`https://${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer">
+            {personalInfo.linkedin}
+          </a></span>
         </div>
       </div>
     </div>

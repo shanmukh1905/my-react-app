@@ -1,0 +1,110 @@
+.homeContainer {
+  margin-bottom: 3rem;
+}
+
+.mainHeading {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--google-blue);
+  font-weight: 500;
+}
+
+.tagSkillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+/* Google-colored skill tags - alternating colors */
+.skillTag {
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.skillTag:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.skillTag:nth-child(4n+1) {
+  background-color: var(--google-light-blue);
+  color: var(--google-blue);
+}
+
+.skillTag:nth-child(4n+2) {
+  background-color: var(--google-light-red);
+  color: var(--google-red);
+}
+
+.skillTag:nth-child(4n+3) {
+  background-color: var(--google-light-yellow);
+  color: var(--google-orange);
+}
+
+.skillTag:nth-child(4n+4) {
+  background-color: var(--google-light-green);
+  color: var(--google-green);
+}
+
+.contactLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.contactLinks a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--google-medium-blue);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.contactLinks a:hover {
+  background-color: var(--google-light-blue);
+  text-decoration: none;
+}
+
+.contactLinks a svg {
+  margin-right: 8px;
+}
+
+.educationItem {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.educationItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--google-medium-blue);
+}
+
+.educationItem:nth-child(2)::before {
+  background-color: var(--google-medium-red);
+}
+
+.educationItem:nth-child(3)::before {
+  background-color: var(--google-medium-green);
+}
+
+@media (min-width: 768px) {
+  .mainHeading {
+    font-size: 3rem;
+  }
+}

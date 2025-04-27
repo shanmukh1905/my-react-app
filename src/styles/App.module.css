@@ -1,0 +1,122 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 40px 0;
+  position: relative;
+}
+
+/* Google-themed section styling */
+.section::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 40px;
+  height: calc(100% - 80px);
+  width: 4px;
+  background-color: var(--google-medium-blue);
+}
+
+.blueSection::before {
+  background-color: var(--google-medium-blue);
+}
+
+.redSection::before {
+  background-color: var(--google-medium-red);
+}
+
+.yellowSection::before {
+  background-color: var(--google-yellow);
+}
+
+.greenSection::before {
+  background-color: var(--google-medium-green);
+}
+
+.sectionHeading {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: var(--google-black);
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.blueSection .sectionHeading {
+  color: var(--google-blue);
+}
+
+.redSection .sectionHeading {
+  color: var(--google-red);
+}
+
+.yellowSection .sectionHeading {
+  color: var(--google-orange);
+}
+
+.greenSection .sectionHeading {
+  color: var(--google-green);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid var(--google-light-grey);
+  color: var(--google-grey);
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Google signature color bar for footer */
+.googleColorBar {
+  display: flex;
+  width: 100%;
+  max-width: 200px;
+  height: 4px;
+  margin-top: 15px;
+}
+
+.blueBar, .redBar, .yellowBar, .greenBar {
+  flex: 1;
+  height: 100%;
+}
+
+.blueBar {
+  background-color: var(--google-medium-blue);
+}
+
+.redBar {
+  background-color: var(--google-medium-red);
+}
+
+.yellowBar {
+  background-color: var(--google-yellow);
+}
+
+.greenBar {
+  background-color: var(--google-medium-green);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section::before {
+    top: 60px;
+    height: calc(100% - 120px);
+    width: 6px;
+  }
+  
+  .sectionHeading {
+    font-size: 2.5rem;
+  }
+}
