@@ -8,6 +8,24 @@ const Home = () => {
   const data = getData();
   const { personalInfo, skills, education } = data;
 
+  const InterestsSection = ({ interests }) => {
+    return (
+      <Card
+        theme="yellow"
+        title="Interests"
+        content={
+          <ul className={styles.interestsList}>
+            {interests.map((interest, index) => (
+              <li key={index} className={styles.interestItem}>
+                {interest}
+              </li>
+            ))}
+          </ul>
+        }
+      />
+    );
+  };
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroSection}>
@@ -70,18 +88,7 @@ const Home = () => {
           </div>
         }
       />
-      
-      <Card
-        theme="yellow"
-        title="Interests"
-        content={
-          <ul className={styles.interestsList}>
-            {data.interests.map((interest, index) => (
-              <li key={index} className={styles.interestItem}>{interest}</li>
-            ))}
-          </ul>
-        }
-      />
+      <InterestsSection interests={data.interests} />
     </div>
   );
 };

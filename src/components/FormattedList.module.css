@@ -1,0 +1,37 @@
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.item {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.blue .item::before {
+  color: var(--google-medium-blue);
+}
+
+.red .item::before {
+  color: var(--google-medium-red);
+}
+
+.yellow .item::before {
+  color: var(--google-yellow);
+}
+
+.green .item::before {
+  color: var(--google-medium-green);
+}

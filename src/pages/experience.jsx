@@ -1,42 +1,54 @@
 import React from "react";
 import Card from '../components/Card';
 import { getData } from '../utils/dataLoader';
+import styles from './experience.module.css';
 
 const Experience = () => {
     const data = getData();
     const { experience, certifications } = data;
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <h3>Work Experience</h3>
-            {experience.map((exp, index) => (
-                <Card
-                    key={index}
-                    title={exp.position}
-                    subtitle={`${exp.organization} | ${exp.duration}`}
-                    theme="blue" // Apply Google blue theme
-                    content={
-                        <div>
-                            <ul style={{ paddingLeft: '20px' }}>
-                                {exp.responsibilities && exp.responsibilities.map((resp, idx) => (
-                                    <li key={idx}>{resp}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    }
-                />
-            ))}
+        <div className={styles.experienceContainer}>
+            <div className={styles.section}>
+                <h3 className={styles.sectionTitle}>Work Experience</h3>
+                {experience && experience.map((exp, index) => (
+                    <Card
+                        key={index}
+                        title={exp.position}
+                        subtitle={
+                            <div className={styles.experienceSubtitle}>
+                                <span>{exp.organization}</span>
+                                <span className={styles.duration}>{exp.duration}</span>
+                            </div>
+                        }
+                        theme="blue"
+                        content={
+                            <div className={styles.experienceContent}>
+                                {exp.responsibilities && (
+                                    <ul className={styles.responsibilitiesList}>
+                                        {exp.responsibilities.map((responsibility, idx) => (
+                                            <li key={idx}>{responsibility}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
+                        }
+                    />
+                ))}
+            </div>
             
-            <h3>Certifications</h3>
-            {certifications && certifications.map((cert, index) => (
-                <Card
-                    key={index}
-                    title={cert.name}
-                    subtitle={cert.duration}
-                    theme="red" // Apply Google red theme
-                    content={<p>{cert.details}</p>}
-                />
-            ))}
+            <div className={styles.section}>
+                <h3 className={styles.sectionTitle}>Certifications</h3>
+                {certifications && certifications.map((cert, index) => (
+                    <Card
+                        key={index}
+                        title={cert.name}
+                        subtitle={cert.duration}
+                        theme="red"
+                        content={<div className={styles.certificationContent}>{cert.details}</div>}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

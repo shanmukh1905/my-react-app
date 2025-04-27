@@ -81,16 +81,16 @@
 }
 
 .educationItem {
-  position: relative;
-  padding-left: 0;
+  margin-bottom: 24px;
+  text-align: left;
 }
 
 .educationHeader {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: baseline;
   flex-wrap: wrap;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .educationHeader h3 {
@@ -108,8 +108,7 @@
 }
 
 .institutionName {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 6px;
 }
 
 .educationScore {
@@ -120,17 +119,26 @@
 
 /* Interests styles */
 .interestsList {
-  padding-left: 1.5rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .interestItem {
-  margin-bottom: 1rem;
   position: relative;
-  line-height: 1.6;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  text-align: left;
 }
 
-.interestItem::marker {
-  color: var(--google-medium-blue);
+.interestItem::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--google-yellow);
+  font-size: 18px;
+  line-height: 1.4;
 }
 
 @media (min-width: 768px) {

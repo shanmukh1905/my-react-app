@@ -50,6 +50,7 @@
   display: inline-block;
   padding: 0 24px;
   letter-spacing: -0.5px;
+  text-align: left; /* Ensure section headings are left-aligned */
 }
 
 .blueSection .sectionHeading {
@@ -71,6 +72,7 @@
 .sectionContent {
   padding: 0 24px;
   animation: fadeIn 0.6s ease-out;
+  text-align: left; /* Ensure all section content is left-aligned */
 }
 
 @keyframes fadeIn {
@@ -103,7 +105,7 @@
   gap: 30px;
   width: 100%;
   margin-bottom: 40px;
-  text-align: center;
+  text-align: left; /* Change from center to left */
 }
 
 .footerLogo {
@@ -119,6 +121,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  text-align: left;
 }
 
 .footerLinks a {
@@ -127,7 +130,7 @@
 
 .footerSocial {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Change from center to flex-start */
   gap: 20px;
   margin-bottom: 20px;
 }
@@ -179,6 +182,7 @@
 }
 
 .copyright {
+  text-align: center;
   margin-top: 20px;
   font-size: 0.875rem;
 }
@@ -197,13 +201,5 @@
   .footerGrid {
     grid-template-columns: 1fr 1fr 1fr;
     text-align: left;
-  }
-  
-  .footerLinks {
-    align-items: flex-start;
-  }
-  
-  .footerSocial {
-    justify-content: flex-start;
   }
 }
