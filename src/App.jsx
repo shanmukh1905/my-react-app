@@ -19,8 +19,8 @@ function App() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Add a Google-inspired theme color cycle for sections
-  const sectionThemes = ['blue', 'red', 'yellow', 'green'];
+  // Current year for copyright
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className={styles.container}>
@@ -38,22 +38,30 @@ function App() {
               
               <section id="experience" className={`${styles.section} ${styles.blueSection}`}>
                 <h2 className={styles.sectionHeading}>Experience</h2>
-                <Experience />
+                <div className={styles.sectionContent}>
+                  <Experience />
+                </div>
               </section>
               
               <section id="projects" className={`${styles.section} ${styles.redSection}`}>
                 <h2 className={styles.sectionHeading}>Projects</h2>
-                <Projects />
+                <div className={styles.sectionContent}>
+                  <Projects />
+                </div>
               </section>
               
               <section id="blogs" className={`${styles.section} ${styles.yellowSection}`}>
                 <h2 className={styles.sectionHeading}>Blogs</h2>
-                <Blogs />
+                <div className={styles.sectionContent}>
+                  <Blogs />
+                </div>
               </section>
               
               <section id="contact" className={`${styles.section} ${styles.greenSection}`}>
                 <h2 className={styles.sectionHeading}>Contact</h2>
-                <Contact />
+                <div className={styles.sectionContent}>
+                  <Contact />
+                </div>
               </section>
             </>
           } />
@@ -66,13 +74,50 @@ function App() {
       </main>
       
       <footer className={styles.footer}>
+        <div className={styles.googleColorBar}>
+          <div className={styles.blueBar}></div>
+          <div className={styles.redBar}></div>
+          <div className={styles.yellowBar}></div>
+          <div className={styles.greenBar}></div>
+        </div>
+        
         <div className={styles.footerContent}>
-          <p>© 2025 {data.personalInfo.name}'s Portfolio Website</p>
-          <div className={styles.googleColorBar}>
-            <div className={styles.blueBar}></div>
-            <div className={styles.redBar}></div>
-            <div className={styles.yellowBar}></div>
-            <div className={styles.greenBar}></div>
+          <div className={styles.footerGrid}>
+            <div>
+              <div className={styles.footerLogo}>Portfolio</div>
+              <p>Computer Science student passionate about robotics, machine learning, and embedded systems.</p>
+            </div>
+            
+            <div>
+              <h4>Quick Links</h4>
+              <div className={styles.footerLinks}>
+                <a href="#home">Home</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </div>
+            
+            <div>
+              <h4>Connect</h4>
+              <p>Feel free to reach out for collaborations or just a friendly chat.</p>
+              <div className={styles.footerSocial}>
+                <a href={`mailto:${data.personalInfo.email}`} className={styles.socialIcon} aria-label="Email">
+                  ✉️
+                </a>
+                <a href={`https://${data.personalInfo.linkedin}`} target="_blank" rel="noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+                  in
+                </a>
+                <a href="https://github.com" target="_blank" rel="noreferrer" className={styles.socialIcon} aria-label="GitHub">
+                  GH
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className={styles.copyright}>
+            © {currentYear} {data.personalInfo.name}'s Portfolio Website
           </div>
         </div>
       </footer>

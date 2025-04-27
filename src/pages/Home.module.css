@@ -1,110 +1,144 @@
 .homeContainer {
+  padding: 0 24px;
+}
+
+.heroSection {
+  text-align: center;
   margin-bottom: 3rem;
 }
 
 .mainHeading {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--google-blue);
   margin-bottom: 0.5rem;
-  color: var(--google-blue);
-  font-weight: 500;
+  letter-spacing: -1px;
+  animation: fadeIn 1s ease-out;
 }
 
-.tagSkillsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 1rem;
+.subHeading {
+  font-size: 1.25rem;
+  color: var(--google-grey);
+  font-weight: 400;
+  animation: fadeIn 1s ease-out 0.3s both;
 }
 
-/* Google-colored skill tags - alternating colors */
-.skillTag {
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: transform 0.2s;
-  box-shadow: var(--shadow-sm);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.skillTag:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+.aboutText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
-.skillTag:nth-child(4n+1) {
-  background-color: var(--google-light-blue);
-  color: var(--google-blue);
+.skillsSection {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.skillTag:nth-child(4n+2) {
-  background-color: var(--google-light-red);
-  color: var(--google-red);
-}
-
-.skillTag:nth-child(4n+3) {
-  background-color: var(--google-light-yellow);
-  color: var(--google-orange);
-}
-
-.skillTag:nth-child(4n+4) {
-  background-color: var(--google-light-green);
-  color: var(--google-green);
+.skillsSection h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--google-black);
 }
 
 .contactLinks {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  margin-top: 1rem;
 }
 
-.contactLinks a {
+.contactButton {
   display: inline-flex;
   align-items: center;
-  color: var(--google-medium-blue);
-  text-decoration: none;
   padding: 8px 16px;
-  border-radius: 50px;
-  transition: background-color 0.2s;
+  background-color: white;
+  border: 1px solid var(--google-light-grey);
+  border-radius: 100px;
   font-weight: 500;
+  color: var(--google-blue);
+  transition: all 0.2s ease;
 }
 
-.contactLinks a:hover {
+.contactButton:hover {
   background-color: var(--google-light-blue);
   text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-.contactLinks a svg {
+.contactIcon {
   margin-right: 8px;
+}
+
+/* Education styles */
+.educationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .educationItem {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 20px;
+  padding-left: 0;
 }
 
-.educationItem::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--google-medium-blue);
+.educationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }
 
-.educationItem:nth-child(2)::before {
-  background-color: var(--google-medium-red);
+.educationHeader h3 {
+  margin-bottom: 0.25rem;
+  color: var(--google-black);
 }
 
-.educationItem:nth-child(3)::before {
-  background-color: var(--google-medium-green);
+.educationDuration {
+  font-weight: 500;
+  color: var(--google-medium-blue);
+  background-color: var(--google-light-blue);
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.875rem;
+}
+
+.institutionName {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.educationScore {
+  font-weight: 500;
+  color: var(--google-grey);
+  font-size: 0.95rem;
+}
+
+/* Interests styles */
+.interestsList {
+  padding-left: 1.5rem;
+}
+
+.interestItem {
+  margin-bottom: 1rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.interestItem::marker {
+  color: var(--google-medium-blue);
 }
 
 @media (min-width: 768px) {
   .mainHeading {
-    font-size: 3rem;
+    font-size: 4rem;
+  }
+  
+  .heroSection {
+    margin-bottom: 4rem;
   }
 }
